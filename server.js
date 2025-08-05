@@ -6,6 +6,9 @@ const { PDFDocument } = require("pdf-lib");
 const app = express();
 app.use(express.json());
 
+// Serve static files in the /files directory
+app.use("/files", express.static(path.join(__dirname, "files")));
+
 app.post("/generate", async (req, res) => {
   try {
     const data = req.body;
@@ -34,12 +37,19 @@ app.post("/generate", async (req, res) => {
     form.getTextField("seller_name_2").setText(`${data.seller_name_2}`);
 
     form.flatten();
-    console.log("Generate PDF Start");
-    const pdfBytes = await pdfDoc.save();
+    console.log("✅ Generate PDF Start");
 
-    res.setHeader("Content-Type", "application/pdf");
-    res.setHeader("Content-Disposition", "attachment; filename=offer_contract.pdf");
-    res.send(pdfBytes);
+    const pdfBytes = await pdfDoc.save();
+    const timestamp = Date.now();
+    const filename = `offer_contract_${timestamp}.pdf`;
+    const outputPath = path.join(__dirname, "files", filename);
+
+    // Ensure the directory exists
+    fs.mkdirSync(path.join(__dirname, "files"), { recursive: true });
+    fs.writeFileSync(outputPath, pdfBytes);
+
+    const publicUrl = `https://pdf-invoice-genderator-backend.onrender.com/files/${filename}`;
+    res.json({ pdf_url: publicUrl });
   } catch (err) {
     console.error("❌ PDF generation failed:", err);
     res.status(500).send("PDF generation failed.");
