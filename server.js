@@ -34,7 +34,7 @@ app.post("/generate", async (req, res) => {
     form.getTextField("seller_name_2").setText(`${data.seller_name_2}`);
 
     form.flatten();
-
+    console.log("Generate PDF Start");
     const pdfBytes = await pdfDoc.save();
 
     res.setHeader("Content-Type", "application/pdf");
