@@ -37,12 +37,9 @@ app.post("/generate", async (req, res) => {
     console.log("Generate PDF Start");
     const pdfBytes = await pdfDoc.save();
 
-    res.writeHead(200, {
-      'Content-Type': 'application/pdf',
-      'Content-Disposition': 'inline; filename="offer_contract.pdf"',
-      'Content-Length': pdfBytes.length,
-    });
-    res.end(Buffer.from(pdfBytes));
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader("Content-Disposition", "attachment; filename=offer_contract.pdf");
+    res.send(pdfBytes);
   } catch (err) {
     console.error("❌ PDF generation failed:", err);
     res.status(500).send("PDF generation failed.");
