@@ -12,6 +12,7 @@ app.use("/files", express.static(path.join(__dirname, "files")));
 app.post("/generate", async (req, res) => {
   try {
     const data = req.body;
+    console.log(data);
     const existingPdfBytes = fs.readFileSync(path.join(__dirname, "as-is.pdf"));
     const pdfDoc = await PDFDocument.load(existingPdfBytes);
     const form = pdfDoc.getForm();
