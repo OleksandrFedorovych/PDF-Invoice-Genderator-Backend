@@ -16,7 +16,7 @@ app.post("/generate", async (req, res) => {
     const pdfDoc = await PDFDocument.load(existingPdfBytes);
     const form = pdfDoc.getForm();
 
-    form.getTextField("seller_full_name").setText($(`${data.seller_name_1}` `${data.seller_name_2}`));
+    form.getTextField("seller_full_name").setText(`${data.seller_name_1}` `${data.seller_name_2}`);
     form.getTextField("buyer_full_name").setText(`Adir Schneider PA`);
     form.getTextField("property_street_address").setText(`${data.property_street_address}, ${data.property_city}, ${data.property_state}`);
     form.getTextField("property_county").setText(`${data.property_county}`);
