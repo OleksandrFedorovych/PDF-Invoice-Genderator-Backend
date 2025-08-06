@@ -22,22 +22,22 @@ app.post("/generate", async (req, res) => {
     form.getTextField("property_county").setText(`${data.property_county}`);
     form.getTextField("property_tax_id").setText(`${data.property_tax_id}`);
     form.getTextField("legal_description").setText(`${data.legal_description}`);
-    form.getTextField("other_personal_property").setText(``); // ??
-    form.getTextField("excluded_items").setText(``); // ??
+    form.getTextField("other_personal_property").setText(""); // ??
+    form.getTextField("excluded_items").setText(""); // ??
     form.getTextField("purchase_price").setText(`${data.purchase_price}`);
     form.getTextField("initial_deposit_amount").setText(`${data.initial_deposit_amount}`);
     form.getTextField("escrow_agent_name").setText(`Cooperative Title Agency of Florida, lnc.`);
     form.getTextField("escrow_agent_address").setText(`9700 Griffin Road Cooper City FL 33328`);
     form.getTextField("escrow_agent_phone").setText(`(954) 616-5302`);
     form.getTextField("escrow_agent_email").setText(`richard@cooptitle.com`);
-    form.getTextField("escrow_agent_fax").setText(``);
+    form.getTextField("escrow_agent_fax").setText("");
 
     form.getTextField("additional_deposit_delay_days").setText(`10`);
-    form.getTextField("additional_deposit_amount").setText(``);
+    form.getTextField("additional_deposit_amount").setText("");
 
-    form.getTextField("loan_amount").setText(``);
-    form.getTextField("other_closing_funds_description").setText(``);
-    form.getTextField("other_closing_funds").setText(``);
+    form.getTextField("loan_amount").setText("");
+    form.getTextField("other_closing_funds_description").setText("");
+    form.getTextField("other_closing_funds").setText("");
 
     form.getTextField("balance_to_close").setText(`${data.balance_to_close}`);
     form.getTextField("offer_acceptance_deadline").setText(`${data.offer_acceptance_deadline}`);
@@ -49,26 +49,26 @@ app.post("/generate", async (req, res) => {
     form.getTextField("seller_initial_2").setText(`${data.seller_name_2}`);
 
     form.getTextField("loan_approval_period_days").setText(`30`);
-    form.getTextField("loan_type_other").setText(``);
-    form.getTextField("loan_interest_rate_cap").setText(``);
+    form.getTextField("loan_type_other").setText("");
+    form.getTextField("loan_interest_rate_cap").setText("");
     form.getTextField("loan_term_years").setText(`30`);
     form.getTextField("loan_application_deadline_days").setText(`5`);
 
-    form.getTextField("buyer_other_costs").setText(``);
-    form.getTextField("title_evidence_deadline_days").setText(``);
+    form.getTextField("buyer_other_costs").setText("");
+    form.getTextField("title_evidence_deadline_days").setText("");
     form.getTextField("title_evidence_deadline_days").setText(`15`);
 
     form.getTextField("title_search_max_cost").setText(`200`);
-    form.getTextField("home_warranty_provider").setText(``);
-    form.getTextField("home_warranty_cost_cap").setText(``);
+    form.getTextField("home_warranty_provider").setText("");
+    form.getTextField("home_warranty_cost_cap").setText("");
     
     form.getTextField("flood_termination_days").setText(`20`);
 
     form.getTextField("inspection_period_days").setText(`15`);
 
-    form.getTextField("other_terms").setText(``);
+    form.getTextField("other_terms").setText("");
     form.getTextField("additional_terms").setText(`- Seller shalle convey and transfer clear and marketable title, free and clear from any encumbrances, clouds, \n title, defects, open, active, expired or inactive permits, county or municipal violations liens or other defects. \n buyer is a licensed real estate agent \n
-    - Seller shall provide access to the property with 24 hours notice.`);
+                                                   - Seller shall provide access to the property with 24 hours notice.`);
 
     form.getTextField("buyer1").setText(`?`);
     form.getTextField("buyer2").setText(`?`);
