@@ -67,8 +67,7 @@ app.post("/generate", async (req, res) => {
     form.getTextField("inspection_period_days").setText(`15`);
 
     form.getTextField("other_terms").setText("");
-    form.getTextField("additional_terms").setText(`- Seller shalle convey and transfer clear and marketable title, free and clear from any encumbrances, clouds, \n title, defects, open, active, expired or inactive permits, county or municipal violations liens or other defects. \n buyer is a licensed real estate agent \n
-                                                   - Seller shall provide access to the property with 24 hours notice.`);
+    form.getTextField("additional_terms").setText(`- Seller shalle convey and transfer clear and marketable title, free and clear from any encumbrances, clouds, \n title, defects, open, active, expired or inactive permits, county or municipal violations liens or other defects. \n buyer is a licensed real estate agent \n- Seller shall provide access to the property with 24 hours notice.`);
 
     form.getTextField("buyer1").setText(`?`);
     form.getTextField("buyer2").setText(`?`);
