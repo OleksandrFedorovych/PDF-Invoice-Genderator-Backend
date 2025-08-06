@@ -82,7 +82,7 @@ app.post("/generate", async (req, res) => {
     form.getTextField("seller_address_notice").setText(`?`);
     form.getTextField("cooperate_sales_associate").setText(`?`);
     form.getTextField("cooperate_broker").setText(`?`);
-    form.getTextField("list_sales_associat").setText(`?`);
+    form.getTextField("list_sales_associate").setText(`?`);
     form.getTextField("list_broker").setText(`?`);
 
 
